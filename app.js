@@ -108,6 +108,8 @@ async function appendToSheet(auth, data) {
     });
 }
 // Start the server
-app.listen(port, () => {
+const server = app.listen(process.env.PORT || 3000, () => {
+    const port = server.address().port;
     console.log(`Server is running on port ${port}`);
 });
+
